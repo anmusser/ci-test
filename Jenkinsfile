@@ -4,19 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-				bat 'C:/BuildEngine/Scripts/Echo.bat'
-			//	bat 'python C:/BuildEngine/Scripts/Build.py'
+                echo 'Building...'
+				bat 'python C:/BuildEngine/Scripts/Build.py'
             }
         }
-        stage('Test') {
+        stage('Run') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo 'Running...'
+				bat 'python C:/BuildEngine/Scripts/Run.py'
             }
         }
     }
