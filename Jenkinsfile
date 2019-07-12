@@ -17,7 +17,11 @@ pipeline {
 		stage('Run') {
 			steps {
 				bat 'C:/BuildEngine/Scripts/Echo.bat Running...'
-				bat 'C:/BuildEngine/Scripts/Run.bat'
+				script{
+			        withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+				        bat 'start C:/BuildEngine/Temp/Simulation/ar000loader.exe'
+			        }
+			    }	
 			}
 		}
     }
