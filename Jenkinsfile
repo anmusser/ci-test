@@ -17,7 +17,7 @@ pipeline {
 		stage('Run') {
 			steps {
 				bat 'C:/BuildEngine/Scripts/Echo.bat Running...'
-				bat 'python C:/BuildEngine/Scripts/Run.bat'
+				bat 'C:/BuildEngine/Scripts/Run.bat'
 			}
 		}
     }
