@@ -19,7 +19,7 @@ pipeline {
 				bat 'C:/BuildEngine/Scripts/Echo.bat Running...'
 				script{
 			        withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
-				        bat 'start C:/BuildEngine/Temp/Simulation/ar000loader.exe'
+				        bat 'C:/BuildEngine/Scripts/Run.bat'
 			        }
 			    }	
 			}
