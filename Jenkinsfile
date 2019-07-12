@@ -4,17 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				echo ''
-				echo '*******************'
-                echo 'Building...'
-				echo '*******************'
-				echo ''
+				bat 'C:/BuildEngine/Scripts/Echo.bat Building...'
 				bat 'python C:/BuildEngine/Scripts/Build.py'
-				echo ''
-				echo '*******************'
-                echo 'Installing...'
-				echo '*******************'
-				echo ''
+				bat 'C:/BuildEngine/Scripts/Echo.bat Installing...'
 				bat 'C:/BuildEngine/Scripts/Install.bat'			
             }
         }
