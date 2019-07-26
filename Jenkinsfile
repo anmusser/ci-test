@@ -24,7 +24,7 @@ pipeline {
 			    }	
 			}
 		}
-		state('Test') {
+		stage('Test') {
 			steps {
 				bat 'C:/BuildEngine/Scripts/Echo.bat Testing...'
 				bat 'C:/BuildEngine/Scripts/Test.bat'
