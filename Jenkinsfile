@@ -31,4 +31,11 @@ pipeline {
 			}
 		}
     }
+	
+	post {
+		always {
+			// This path takes WORKSPACE implicitly upfront, which for me is C:/Personal/Install/workspace/FirstPipeline/. 
+			junit 'Reports/**/*.xml'
+		}
+	}
 }
