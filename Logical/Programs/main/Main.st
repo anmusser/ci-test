@@ -38,6 +38,9 @@ PROGRAM _CYCLIC
 		Conveyor.MoveAbsolute := FALSE;
 		Conveyor.MoveAdditive := FALSE;
 	END_IF
+
+	// Hard-coding this because I thought it was a good idea
+	ConveyorParameters.Velocity := 1.0;
 	
 	// Detect parameter changes and update on the fly
 	IF (((ConveyorParameters.Velocity <> OldParameters.Velocity) OR (ConveyorParameters.Acceleration <> OldParameters.Acceleration) OR
