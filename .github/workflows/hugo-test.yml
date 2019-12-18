@@ -1,6 +1,11 @@
-name: CI
+name: Continuous Integration Test
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+    paths:
+      - 'Web/**'
 
 jobs:
   build:
@@ -9,31 +14,23 @@ jobs:
 
     steps:
     
-    - uses: actions/checkout@v1
+    - name: Repository Checkout
+      uses: actions/checkout@v1
       
-    - name: Create Temp Folder
-      run: mkdir $GITHUB_WORKSPACE/Web/Temp
-      
-    - name: Hugo setup
+    - name: Hugo Setup
       uses: peaceiris/actions-hugo@v2.3.2
     
-    - name: Build
-      run: hugo --source $GITHUB_WORKSPACE/Web --destination $GITHUB_WORKSPACE/Web/Temp --cleanDestinationDir
-
-    - uses: actions/upload-artifact@v1
-      with:
-        name: web-artifact
-        path: Web/Temp
+    - name: Hugo Build
+      run: hugo --source $GITHUB_WORKSPACE/Web --destination $GITHUB_WORKSPACE/docs --cleanDestinationDir
     
-    - name: Git Commit and Push
-      uses: github-actions-x/commit@v2.3
+    - name: Commit Files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Automatic commit" -a    
+    
+    - name: GitHub Push
+      uses: ad-m/github-push-action@v0.5.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        # Override branch to push to
-        push-branch: master
-        # Specify commit message
-        commit-message: This is a test automatic commit.
-        # Force add files, useful for adding ignored files.
-        force-add: false
-        # Pull and rebase before commiting. Useful when using commit inside matrix.
-        rebase: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
