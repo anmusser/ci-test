@@ -30,10 +30,6 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         # Override branch to push to
-        push-branch: master
+        push-branch: 'master'
         # Specify commit message
-        commit-message: This is a test automatic commit.
-        # Force add files, useful for adding ignored files.
-        force-add: false
-        # Pull and rebase before commiting. Useful when using commit inside matrix.
-        rebase: false
+        commit-message: 'This is a test automatic commit.'
