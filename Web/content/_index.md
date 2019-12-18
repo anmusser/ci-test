@@ -4,4 +4,4 @@ description: 'Loupe Style Guide'
 draft: false
 ---
 
-No need to fret; it's right around the corner.
+Let's break for lunch.
