@@ -1,0 +1,26 @@
+baseURL = "http://example.org/" #This should be set to something
+languageCode = "en-us"
+title = "Test Documentation"
+theme = "hugo-theme-learn"
+relativeURLs = true
+uglyurls = true
+enableGitInfo = true
+	
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[Languages]
+[Languages.en]
+title = "Loupe Documentation"
+weight = 1
+languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+name = "</i> Test Website"
+identifier = "Test"
+url = "http://test.team"
+weight = 10
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "mine"
