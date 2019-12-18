@@ -1,6 +1,11 @@
-name: CI
+name: Continuous Integration Test
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+    paths:
+      - 'Web/**'
 
 jobs:
   build:
@@ -9,12 +14,13 @@ jobs:
 
     steps:
     
-    - uses: actions/checkout@v1
+    - name: Repository Checkout
+      uses: actions/checkout@v1
       
-    - name: Hugo setup
+    - name: Hugo Setup
       uses: peaceiris/actions-hugo@v2.3.2
     
-    - name: Build
+    - name: Hugo Build
       run: hugo --source $GITHUB_WORKSPACE/Web --destination $GITHUB_WORKSPACE/docs --cleanDestinationDir
     
     - name: Commit Files
