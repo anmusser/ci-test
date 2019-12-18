@@ -4,4 +4,4 @@ description: 'Loupe Style Guide'
 draft: false
 ---
 
-Let's talk about this together. I'm serious, I want to hear your thoughts.
+I'm not doing this again. Not here. Not now.
