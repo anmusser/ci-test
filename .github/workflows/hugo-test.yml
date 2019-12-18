@@ -28,6 +28,7 @@ jobs:
     - name: Git Commit and Push
       uses: github-actions-x/commit@v2.3
       with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         # Override branch to push to
         push-branch: master
         # Specify commit message
