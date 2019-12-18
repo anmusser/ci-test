@@ -16,11 +16,6 @@ jobs:
     
     - name: Build
       run: hugo --source $GITHUB_WORKSPACE/Web --destination $GITHUB_WORKSPACE/docs --cleanDestinationDir
-
-    - uses: actions/upload-artifact@v1
-      with:
-        name: web-artifact
-        path: docs
     
     - name: Commit Files
       run: |
@@ -32,5 +27,4 @@ jobs:
     - name: GitHub Push
       uses: ad-m/github-push-action@v0.5.0
       with:
-        # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
