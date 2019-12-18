@@ -11,8 +11,16 @@ jobs:
     
     - uses: actions/checkout@v1
       
+    - name: Create Temp Folder
+      run: mkdir $GITHUB_WORKSPACE/Web/Temp
+      
     - name: Hugo setup
       uses: peaceiris/actions-hugo@v2.3.2
     
     - name: Build
-      run: hugo --source $GITHUB_WORKSPACE/Web
+      run: hugo --source $GITHUB_WORKSPACE/Web --destination $GITHUB_WORKSPACE/Web/Temp --cleanDestinationDir
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: web-artifact
+        path: $GITHUB_WORKSPACE/Web/Temp
