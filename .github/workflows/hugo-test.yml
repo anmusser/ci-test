@@ -19,14 +19,8 @@ jobs:
     
     - name: Build
       run: hugo --source $GITHUB_WORKSPACE/Web --destination $GITHUB_WORKSPACE/Web/Temp --cleanDestinationDir
-    
-    - name: Validation
-      run: |
-        cd $GITHUB_WORKSPACE/Web/Temp
-        ls
-        printenv
 
     - uses: actions/upload-artifact@v1
       with:
         name: web-artifact
-        path: $GITHUB_WORKSPACE/Web/Temp
+        path: Web/Temp
