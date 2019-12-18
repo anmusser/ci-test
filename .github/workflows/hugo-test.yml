@@ -24,3 +24,15 @@ jobs:
       with:
         name: web-artifact
         path: Web/Temp
+    
+    - name: Git Commit and Push
+      uses: github-actions-x/commit@v2.3
+      with:
+        # Override branch to push to
+        push-branch: master
+        # Specify commit message
+        commit-message: This is a test automatic commit.
+        # Force add files, useful for adding ignored files.
+        force-add: false
+        # Pull and rebase before commiting. Useful when using commit inside matrix.
+        rebase: false
