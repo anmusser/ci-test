@@ -25,11 +25,8 @@ jobs:
         name: web-artifact
         path: docs
     
-    - name: Git Commit and Push
-      uses: github-actions-x/commit@v2.3
+    - name: GitHub Push
+      uses: ad-m/github-push-action@v0.5.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        # Override branch to push to
-        push-branch: 'master'
-        # Specify commit message
-        commit-message: 'This is a test automatic commit.'
+        # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
