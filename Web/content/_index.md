@@ -5,4 +5,6 @@ draft: false
 ---
 
 I'm ready now. I don't know about this.  
-I think I do. Here we go.
+I think I do. Here we go.  
+  
+And I know where we're headed here.
