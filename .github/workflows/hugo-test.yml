@@ -26,7 +26,7 @@ jobs:
     - name: Commit Files
       run: |
         git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.name "GitHub Documentation Build Action"
         git add -A
         git commit -m "Automatic commit" -a    
     
